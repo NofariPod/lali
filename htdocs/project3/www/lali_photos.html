@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lali photos</title>
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+    <script>
+    i=0;
+    var timer;
+    arr = ["../pic/pic2.jpg","../pic/pic3.jpg","../pic/pic4.jpg","../pic/pic5.jpg","../pic/pic6.jpg"];
+    function nextPic() {
+      i++
+      if (i==arr.length)
+        i=0
+
+      pic.src = arr[i];
+    }
+    function prevPic() {
+
+      if (i<=0)
+        i=arr.length;
+
+      i--;
+      pic.src = arr[i];
+    }
+    function runPic() {
+      clearInterval(timer)
+      timer = setInterval("nextPic()",1500)  }
+
+    function stopPic() {
+      clearInterval(timer)  }
+
+    function slowPic() {
+      clearInterval(timer)
+      timer = setInterval("nextPic()",5000)
+
+    }
+    function fastPic() {
+      clearInterval(timer)
+      timer = setInterval("nextPic()",150)
+    }
+    </script>
+  </head>
+  <body id="lali_photos">
+      <img alt="no picture" src="../pic/pic3.jpg" width="20%" id="pic">
+      <br>
+      <br>
+      <div id="slideshow">
+        <input type="button" value="Next picture" onclick="nextPic()" class="buttons">
+        <input type="button" value="previous picture" onclick="prevPic()" class="buttons">
+        <input type="button" value="run pic" onclick="runPic()" class="buttons">
+        <input type="button" value="stop pic" onclick="stopPic()" class="buttons">
+        <input type="button" value="slow show" onclick="slowPic()" class="buttons">
+        <input type="button" value="fast show" onclick="fastPic()" class="buttons">
+
+    </div>
+
+    <a href="home_page.html">
+			<button class="button2">home</button>
+		</a>
+
+  </body>
+</html>
